@@ -12,7 +12,7 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
 //material-ui
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import MyAwesomeReactComponent from './MyAwesomeReactComponent';
-
+import MoreStuff from './MoreStuff';
 // App component - represents the whole app
 class App extends Component {
   constructor(props) {
@@ -67,10 +67,6 @@ class App extends Component {
         <header>
           <h1>Todo List ({this.props.incompleteCount})</h1>
 
-    <MuiThemeProvider>
-    <MyAwesomeReactComponent />
-  </MuiThemeProvider>
-
   <label className="hide-completed">
     <input
       type="button"
@@ -80,8 +76,13 @@ class App extends Component {
     />
     Hide Completed Tasks
   </label>
-
           <AccountsUIWrapper />
+
+ &nbsp;&nbsp; &nbsp;&nbsp;
+
+              <MuiThemeProvider>
+              <MyAwesomeReactComponent />
+            </MuiThemeProvider>
 
           { this.props.currentUser ?
             <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
@@ -93,14 +94,21 @@ class App extends Component {
             </form> : ''
           }
         </header>
+    <MuiThemeProvider>
+        <MoreStuff />
+    </MuiThemeProvider>
 
         <ul>
           {this.renderTasks()}
         </ul>
+
+
+        
       </div>
     );
   }
 }
+
 
 export default withTracker(() => {
   Meteor.subscribe('tasks');

@@ -22,11 +22,11 @@ function handleClick() {
 const MyAwesomeReactComponent = () => (
 <div>
     <RaisedButton
-       backgroundColor="#a4c639"
+       backgroundColor="#00c639"
         icon={<ActionAndroid />}
         href = "https://www.android.com/"
       />
-
+&nbsp;&nbsp;
     <RaisedButton
       label = "Angela's Github"
       href="https://github.com/asun1234"
@@ -34,27 +34,7 @@ const MyAwesomeReactComponent = () => (
       primary={true}
     />
 
-  </div>,
-
-  <div>
-        <FlatButton
-          aria-haspopup="true"
-          onClick={this.handleClick}
-        >
-          Menu
-        </FlatButton>
-        <Menu
-          id="simple-menu"
-          open={false}
-          onClose={this.handleClose}
-        >
-          <MenuItem onClick={this.handleClose}>Menu 1</MenuItem>
-          <MenuItem onClick={this.handleClose}>Menu 2</MenuItem>
-          <MenuItem onClick={this.handleClose}>Menu 3</MenuItem>
-        </Menu>
-      </div>
-
-
+  </div>
 );
 
 export default MyAwesomeReactComponent;
