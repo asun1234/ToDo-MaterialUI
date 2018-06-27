@@ -61,6 +61,7 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="container">
         <header>
@@ -69,14 +70,6 @@ class App extends Component {
     <MuiThemeProvider>
     <MyAwesomeReactComponent />
   </MuiThemeProvider>
-
-{/* //text field
-  <div className="mdc-text-field mdc-text-field--upgraded">
-  <input className="mdc-text-field__input"
-         type="text"
-         placeholder="Text Field"
-         aria-label="Text Field"/>
-  </div> */}
 
   <label className="hide-completed">
     <input
