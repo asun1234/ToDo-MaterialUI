@@ -6,7 +6,12 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Tasks } from '../api/tasks.js';
 
 import Task from './Task.js';
+//accounts-ui
 import AccountsUIWrapper from './AccountsUIWrapper.js';
+
+//material-ui
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MyAwesomeReactComponent from './MyAwesomeReactComponent';
 
 // App component - represents the whole app
 class App extends Component {
@@ -61,15 +66,27 @@ class App extends Component {
         <header>
           <h1>Todo List ({this.props.incompleteCount})</h1>
 
-          <label className="hide-completed">
-            <input
-              type="checkbox"
-              readOnly
-              checked={this.state.hideCompleted}
-              onClick={this.toggleHideCompleted.bind(this)}
-            />
-            Hide Completed Tasks
-          </label>
+    <MuiThemeProvider>
+    <MyAwesomeReactComponent />
+  </MuiThemeProvider>
+
+{/* //text field
+  <div className="mdc-text-field mdc-text-field--upgraded">
+  <input className="mdc-text-field__input"
+         type="text"
+         placeholder="Text Field"
+         aria-label="Text Field"/>
+  </div> */}
+
+  <label className="hide-completed">
+    <input
+      type="button"
+      readOnly
+      checked={this.state.hideCompleted}
+      onClick={this.toggleHideCompleted.bind(this)}
+    />
+    Hide Completed Tasks
+  </label>
 
           <AccountsUIWrapper />
 
@@ -78,7 +95,7 @@ class App extends Component {
               <input
                 type="text"
                 ref="textInput"
-                placeholder="Type to add new tasks"
+                placeholder="Add new tasks here"
               />
             </form> : ''
           }
